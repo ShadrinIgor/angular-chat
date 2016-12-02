@@ -1,0 +1,120 @@
+.LeftSection .panel{
+    z-index: 9999;
+    cursor: move;
+}
+
+.ui-droppable-hover {
+    border: 1px solid #00ff00;
+    background: rgba(150,255,50,0.2);
+}
+
+.ui-droppable-active {
+    border: 1px solid rgba(0,255,0,0.6);
+    background: rgba(150,255,50,0.1);
+
+}
+
+.ui-droppable-hover {
+    border: 1px solid #00ff00;
+    background: rgba(150,255,50,0.2);
+}
+
+.ui-selectable div.ui-selected {
+    border: 1px solid #0000ff;
+}
+
+.ui-selectable div.ui-selecting {
+    border: 1px solid #0000ff;
+    background: rgba(150,150,255,0.2);
+}
+
+.droppable div.ui-sortable-placeholder {
+    border: 1px dotted #ff00ff;
+}
+
+.row {
+    margin: 0px;
+}
+
+.CBItemClose{
+    float: right;
+    cursor: pointer;
+}
+
+.fieldBlock {
+    border: 1px solid #deadcb;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.CBItem .BlockClose {
+    width: 100%;
+    position: relative;
+}
+
+.CBloks .CBItemClose, .CBItem .BlockClose div{
+    background: #f06b00;
+    color: #fff;
+    border-radius: 12px;
+    width: 19px;
+    text-align: center;
+    position: relative;
+    margin-top: -24px;
+    margin-right: -23px;
+    font-size: 13px;
+    display: none;
+}
+
+.CBItem .BlockClose div {
+    position: static;
+    float: right;
+    margin-top: -17px;
+    margin-right: -18px;
+    font-size: 10px;
+    width: 15px;
+    background: #dc68af;
+}
+
+.CBloks .CBItemClose:hover, .CBItem .BlockClose div:hover{
+    background: #ca2328;
+    color: #fff;
+    border-radius: 12px;
+    width: 22px;
+    text-align: center;
+    position: relative;
+    margin-top: -26px;
+    margin-right: -24px;
+    font-size: 16px;
+}
+
+.fieldBlock.ImageBlock {
+    overflow: hidden;
+}
+
+.fieldBlock i{
+    color: #c3bebe;
+}
+
+.CBItem .panel-body:hover .CBItemClose {
+    display: block;
+}
+
+.CBloks.panel {
+    border: 0px;
+    background: #f6f6f7;
+    box-shadow: inset 0px 0px 8px 0px rgba(100, 100, 100, 0.35);
+}
+
+.CBItem:hover .panel-body {
+    border: 1px solid rgba(240, 107, 0, 0.56);
+    background: rgba(240, 107, 0, 0.06);
+}
+
+.CBItem {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 0px rgba(100, 100, 100, 0.2);
+}
+
+.fieldBlock:hover .BlockClose div{
+    display: block;
+}

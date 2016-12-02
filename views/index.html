@@ -1,0 +1,9 @@
+<h1>Center</h1>
+
+<div class="CBloks panel panel-default">
+    <div class="panel-body droppable">
+        <div ng-repeat="block in centerData.blocks | orderBy : 'sort'" class="CBItem sortable" id="block{{block.id}}"  ng-click="selectBlock( block )" >
+            <div ng-bind-html="getBlockStructure( block )"></div>
+        </div>
+    </div>
+</div>
