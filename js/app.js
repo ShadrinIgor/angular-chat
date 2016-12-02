@@ -10,4 +10,7 @@ var mainApp = angular.module('mainApp', ["ngRoute", "ngSanitize"])
         controller:'RoomController'
       });
     $routeProvider.otherwise({redirectTo: '/index'});
-  });
+  })
+  .run( function( $rootScope ){
+    $rootScope.listGroups = [];
+  } );

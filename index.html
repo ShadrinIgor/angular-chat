@@ -9,13 +9,7 @@
 </head>
 <body>
 <div class="row">
-    <div class="col-xs-2" ng-controller="LeftSectionController">
-        <ng-include src="'views/leftSection.html'"></ng-include>
-    </div>
     <div class="col-xs-7"><ng-view></ng-view></div>
-    <div class="col-xs-3" ng-controller="RightSectionController">
-        <ng-include src="'views/rightSection.html'"></ng-include>
-    </div>
 </div>
 <script src="js/lib/angular.js"></script>
 <script src="js/lib/angular-sanitize.min.js"></script>
@@ -25,7 +19,5 @@
 <script src="js/lib/angular-route.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/controllers/IndexController.js"></script>
-<script src="js/controllers/RoomController.js"></script>
-<script src="js/services/block_service.js"></script>
 </body>
 </html>

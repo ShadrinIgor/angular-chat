@@ -1,9 +1,24 @@
-<h1>Center</h1>
-
-<div class="CBloks panel panel-default">
-    <div class="panel-body droppable">
-        <div ng-repeat="block in centerData.blocks | orderBy : 'sort'" class="CBItem sortable" id="block{{block.id}}"  ng-click="selectBlock( block )" >
-            <div ng-bind-html="getBlockStructure( block )"></div>
-        </div>
+<h1>Index</h1>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <table class="table">
+            <tr ng-repeat="group in listGroups">
+                <td>{{group.name}}</td>
+                <td>
+                    <input type="button" class="btn btn-default" ng-click="edit(group.id)" value="Edit" />&nbsp;
+                    <input type="button" class="btn btn-danger" ng-click="delete(group.id)" value="Del" />
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
+<Form name="AddGroup">
+    <div class="form-group">
+        <label for="group">Group's name:</label>
+        <input type="text" class="form-control" ng-model="group.name" id="group" placeholder="Group's name" />
+    </div>
+    <div class="form-group">
+        <input type="hidden" ng-model="group.id"/>
+        <button type="submit" ng-click="save(group)" class="btn btn-default">Save</button>
+    </div>
+</Form>
