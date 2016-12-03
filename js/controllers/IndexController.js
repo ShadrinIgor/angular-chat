@@ -1,6 +1,35 @@
 mainApp.controller('IndexController',
-  function IndexController($scope, $http, $rootScope) {
-    $scope.listGroups = $rootScope.listGroups;
+  function IndexController($scope, $http, $rootScope, $cookies) {
+    $rootScope.loginError = '';
+    $scope.login = function ( form ) {
+      if( form.name ){
+        if( form.admin ){
+
+          $rootScope.admins.map( function( value ) {
+            if( form.name == value.name && form.password == value.password ) {
+              $rootScope.user = {name:value.name, auth:true, admin:true};
+            }
+          });
+          if( !$rootScope.user.name )$rootScope.loginError = 'Incorrect login or password';
+
+        }
+          else {
+          $rootScope.user = {name:form.name, auth:true, admin:false};
+        }
+
+        if( $rootScope.user.name ) {
+          $cookies.put('user', form.name);
+          $cookies.put('admin', $rootScope.user.admin );
+        }
+      }
+        else $rootScope.loginError = 'You must fill in field';
+    };
+
+    $scope.logout = function() {
+      $cookies.put('user', '');
+      $cookies.put('admin', false );
+    }
+
     $scope.save = function(group){
       if( group.name ){
         $scope.group = {id:0,name:''};
@@ -23,7 +52,7 @@ mainApp.controller('IndexController',
           break;
         }
       }
-    }
+    };
 
     $scope.delete = function(id){
       if (confirm("Do you want to delete")) {

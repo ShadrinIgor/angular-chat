@@ -1,6 +1,6 @@
 mainApp.controller('RoomController',
   function RoomController($scope, $http, $rootScope, $routeParams) {
-    $scope.listMessage = $rootScope.listMessages;
+    //$scope.listMessage = $rootScope.listMessages;
     $scope.groupName = '';
     $scope.groupId = 0;
 
