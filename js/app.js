@@ -4,7 +4,7 @@ var mainApp = angular.module('mainApp', ["ngRoute", "ngSanitize"])
         templateUrl:'views/index.html',
         controller:'IndexController'
       })
-      .when('/room/:userid', {
+      .when('/room/:roomid', {
         templateUrl:'views/room.html',
         controller:'RoomController'
       });

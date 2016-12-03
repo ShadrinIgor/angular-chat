@@ -1,18 +1,23 @@
 mainApp.controller('RoomController',
-  function RoomController($scope, $http, $rootScope) {
-    $scope.listGroups = $rootScope.listGroups;
-    $scope.save = function(group){
-      if( group.name ){
-        $scope.group = {id:0,name:''};
-        if( !group.id || group.id==0 )$rootScope.listGroups.push({id:$rootScope.listGroups.length+1,name:group.name});
-          else {
-          for( var i=0;i< $rootScope.listGroups.length;i++){
-            if( $rootScope.listGroups[i].id == group.id ){
-              $rootScope.listGroups[i].name = group.name;
-              break;
-            }
-          }
+  function RoomController($scope, $http, $rootScope, $routeParams) {
+    $scope.listMessage = $rootScope.listMessages;
+    $scope.groupName = '';
+    $scope.groupId = 0;
+
+    if( $routeParams.roomid > 0 ){
+      for( var i=0;i< $rootScope.listGroups.length;i++){
+        if( $rootScope.listGroups[i].id == $routeParams.roomid ){
+          $scope.groupName = $rootScope.listGroups[i].name;
+          $scope.groupId = $rootScope.listGroups[i].id;
+          break;
         }
+      }
+    }
+
+    $scope.save = function(message){
+      if( message ){
+        $scope.listMessage.push( {user:'user 1', text:message, admin:false, room:$routeParams.roomid } );
+        $scope.message = '';
       }
     };
 

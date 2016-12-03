@@ -1,11 +1,19 @@
-<h2>Room - </h2>
+<a href="/">Back</a>
+<h2>Room - {{groupName}}</h2>
 <fieldset>
-    <div class="form-group">
-        <textarea class="form-control" rows="10" id="text" ng-model="message" placeholder="История сообщений"></textarea>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div ng-repeat="message in listMessage | filter: { room: groupId } | orderBy: 'id' " class="panel panel-info">
+                <div class="panel-body">
+                    {{message.user}} : {{message.text}}
+                </div>
+            </div>
+        </div>
     </div>
     <div class="form-group">
         <form name="blockForm">
-            <button type="submit" ng-click="save(message)" class="btn btn-default">Отправить</button>
+            <input type="text" ng-model="message" class="col-lg-8" placeholder="Message" />&nbsp;&nbsp;
+            <button type="submit" ng-click="save(message)" class="btn btn-sm btn-default col-lg-3">Отправить</button>
         </form>
     </div>
 </fieldset>
