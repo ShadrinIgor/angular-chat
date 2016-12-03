@@ -3,8 +3,8 @@
     <div class="panel-body">
         <table class="table">
             <tr ng-repeat="group in listGroups">
-                <td>{{group.name}}</td>
-                <td>
+                <td class="col-xs-9"><a href="#/room/{{group.id}}">{{group.name}}</a></td>
+                <td class="col-xs-3">
                     <input type="button" class="btn btn-default" ng-click="edit(group.id)" value="Edit" />&nbsp;
                     <input type="button" class="btn btn-danger" ng-click="delete(group.id)" value="Del" />
                 </td>
