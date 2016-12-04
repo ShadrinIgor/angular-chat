@@ -1,11 +1,11 @@
-<a href="/">Back</a>
+<a href="/">Back.</a>
 <h2>Room - {{groupName}}</h2>
 <fieldset>
     <div class="panel panel-default">
         <div class="panel-body">
-            <div ng-repeat="message in listMessage | filter: { room: groupId } | orderBy: 'id' " class="panel panel-info">
+            <div ng-repeat="message in listMessages | filter: { room: groupId } | orderBy: 'id' " class="panel panel-info">
                 <div class="panel-body">
-                    {{message.user}} > {{message.text}}
+                    <span ng-show="message.admin">Admin. </span>{{message.user}} > {{message.text}}
                 </div>
             </div>
         </div>

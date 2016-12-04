@@ -16,7 +16,7 @@ mainApp.controller('RoomController',
 
     $scope.save = function(message){
       if( message ){
-        $scope.listMessage.push( {user:'user 1', text:message, admin:false, room:$routeParams.roomid } );
+        $rootScope.listMessages.push( {id: $rootScope.listMessages.length+1, user:$rootScope.user.name, text:message, admin:$rootScope.user.admin, room: parseInt( $routeParams.roomid ) } );
         $scope.message = '';
       }
     };
